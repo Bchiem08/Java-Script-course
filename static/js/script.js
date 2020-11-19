@@ -12,3 +12,10 @@ function  ageInDays() {
 function reset() {
     document.getElementById("days").remove();
 }
+
+function generateDog() {
+    var image = document.createElement('img')
+    var div = document.getElementById('flex-dog-gen')
+    image.src = "https://www.iluobin.com/Uploads/ueditor/php/upload/image/20190306/1551871722957742.jpg"
+    div.appendChild(image)
+}
