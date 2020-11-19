@@ -19,3 +19,15 @@
     border: 1px solid black;
     align-items: center;
 }
+
+.container-2 {
+    border: 1px solid purple;
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.flex-box-container-2 {
+    display: flex;
+    border: 1px solid blue;
+}
