@@ -21,12 +21,15 @@ function generateDog() {
 }
 
 function rpsGame(yourChoice) {
+    console.log(yourChoice)
     var humanChoice, botChoice;
-    // humanChoice = yourChoice.id;
-    // botChoice = numberToChoice(randToRpsInt())
-    // results = decideWinner(humanChoice,botChoice); [0, 1] human | bot won
+    humanChoice = yourChoice.id;
+    botChoice = numberToChoice(randToRpsInt())
+    console.log('Computer choice', botChoice)
+    results = decideWinner(humanChoice,botChoice)
+    console.log(results)
     // message = finalMessage(results); // "you won"
-    rpsFrontEnd(yourChoice.id, botChoice, message);
+    // rpsFrontEnd(yourChoice.id, botChoice, message);
 }
 
 function randToRpsInt() {
@@ -44,4 +47,7 @@ function decideWinner(yourChoice, computerChoice) {
         'scissors' : {'paper': 1, "scissors": 0.5, 'rock': 0}
     }
     var yourScore = rpsDatabase[yourChoice][computerChoice]
+    var computerScore = rpsDatabase[computerChoice][yourChoice]
+
+    return [yourScore, computerScore];
 }
