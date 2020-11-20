@@ -19,3 +19,12 @@ function generateDog() {
     image.src = "https://www.iluobin.com/Uploads/ueditor/php/upload/image/20190306/1551871722957742.jpg"
     div.appendChild(image)
 }
+
+function rpsGame(yourChoice) {
+    var humanChoice, botChoice;
+    // humanChoice = yourChoice.id;
+    // botChoice = 
+    // results = decideWinner(humanChoice,botChoice); [0, 1] human | bot won
+    // message = finalMessage(results); // "you won"
+    rpsFrontEnd(yourChoice.id, botChoice, message);
+}
