@@ -30,7 +30,7 @@ function rpsGame(yourChoice) {
     console.log(results)
     message = finalMessage(results); 
     console.log(message)
-    // rpsFrontEnd(yourChoice.id, botChoice, message);
+    rpsFrontEnd(yourChoice.id, botChoice, message);
 }
 
 function randToRpsInt() {
@@ -60,7 +60,25 @@ function finalMessage([yourScore, computerScore]) {
         return{'message': 'you tied!', ' color' : 'yellow'}
     } else {
         return{'message': 'you won!', ' color' : 'green'}
+    }
+}
 
+function rpsFrontEnd (humanImageChoice, botImageChoice, finalMessage) {
+    var imagesDatabase = {
+        "rock": document.getElementById('rock').src,
+        "paper": document.getElementById('paper').src,
+        "scissors": document.getElementById('scissors').src
     }
 
+    document.getElementById("rock").remove();
+    document.getElementById("paper").remove();
+    document.getElementById("scissors").remove();
+    
+    var humanDiv = document.createElement('div')
+    var botDiv = document.createElement('div')
+    var messageDiv = document.createElement('div')
+
+    humanDiv.innerHTML = "<img src='" + imagesDatabase[humanImageChoice] + "'height=150 width=150>"
+
+    document.getElementById('flex-box-rps-div').appendChild(humanDiv)
 }
