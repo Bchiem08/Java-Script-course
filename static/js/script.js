@@ -120,3 +120,10 @@ function buttonsRed() {
         all_buttons[i].classList.add('btn-danger')
     }
 }
+
+function buttonsGreen() {
+    for (let i = 0; i < all_buttons.length; i++) {
+        all_buttons[i].classList.remove(all_buttons[i].classList[1])
+        all_buttons[i].classList.add('btn-success')
+    }
+}
