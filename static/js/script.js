@@ -99,3 +99,24 @@ var copyAllButtons = [];
 for (let i = 0; i < all_buttons.length; i++ ) {
     copyAllButtons.push(all_buttons[i])
 }
+
+
+
+function buttonColourChange(buttonThis) {
+    if (buttonThis.value === 'red') {
+        buttonsRed();
+    } else if (buttonThis.value === 'green') {
+        buttonsGreen();
+    } else if (buttonThis.value === 'reset') {
+        buttonsReset();
+    } else if (buttonThis.value === 'random') {
+        randomColours();
+    }
+}
+
+function buttonsRed() {
+    for (let i = 0; i < all_buttons.length; i++) {
+        all_buttons[i].classList.remove(all_buttons[i].classList[1])
+        all_buttons[i].classList.add('btn-danger')
+    }
+}
