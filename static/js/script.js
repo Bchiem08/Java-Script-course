@@ -145,7 +145,8 @@ function randomColours() {
 // BlackJack
 let blackjackGame = {
     'you': {'scoreSpan': '#your-black-jack-result', 'div': '#your-box', 'score': 0},
-    'dealer': {'scoreSpan': '#dealer-black-jack-result', 'div': '#dealer-box', 'score': 0}
+    'dealer': {'scoreSpan': '#dealer-black-jack-result', 'div': '#dealer-box', 'score': 0},
+    'cards': ['2','3','4','5','6','7','8','9','10','K','J','Q','A',],
 }
 
 const YOU = blackjackGame['you']
@@ -158,6 +159,7 @@ document.querySelector("#blackjack-hit-button").addEventListener("click", blackj
 document.querySelector("#blackjack-deal-button").addEventListener("click", blackjackDeal)
 
 function blackjackHit() {
+    let card = randomCard();
     showCard(YOU);
 }
 
@@ -179,4 +181,9 @@ function blackjackDeal() {
     for (i=0; i < dealerImages.length; i++) {
         dealerImages[i].remove()
     }
+}
+
+function randomCard() {
+    let randomIndex = Math.floor(Math.random() * 13);
+    return blackjackGame['cards'][randomIndex]
 }
