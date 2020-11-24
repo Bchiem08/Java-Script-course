@@ -141,3 +141,11 @@ function randomColours() {
         all_buttons[i].classList.add(choices[randomNumber])
     }
 }
+
+// BlackJack
+
+document.querySelector("blackjack-hit-button").addEventListener("click", blackjackHit)
+
+function blackjackHit() {
+    alert('hi')
+}
