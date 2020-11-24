@@ -151,14 +151,17 @@ let blackjackGame = {
 const YOU = blackjackGame['you']
 const DEALER = blackjackGame['dealer']
 
-const HitSound = new Audio('static/sounds/swish.m4a')
+const hitSound = new Audio('static/sounds/swish.m4a')
 
 document.querySelector("#blackjack-hit-button").addEventListener("click", blackjackHit)
 
 function blackjackHit() {
+    showCard()
+}
+
+function showCard() {
     let cardImage = document.createElement('img')
     cardImage.src = 'static/images/Q.png'
     document.querySelector(YOU['div']).appendChild(cardImage)
-    HitSound.play()
+    hitSound.play()
 }
-
