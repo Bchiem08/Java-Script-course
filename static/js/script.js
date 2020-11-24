@@ -143,9 +143,14 @@ function randomColours() {
 }
 
 // BlackJack
+let blackjackGame = {
+    'you': {'scoreSpan': '#your-black-jack-result', 'div': '#your-box', 'result': 0},
+    'dealer': {'scoreSpan': '#dealer-black-jack-result', 'div': '#dealer-box', 'result': 0}
+}
 
 document.querySelector("blackjack-hit-button").addEventListener("click", blackjackHit)
 
 function blackjackHit() {
     alert('hi')
 }
+
