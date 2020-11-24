@@ -144,13 +144,18 @@ function randomColours() {
 
 // BlackJack
 let blackjackGame = {
-    'you': {'scoreSpan': '#your-black-jack-result', 'div': '#your-box', 'result': 0},
-    'dealer': {'scoreSpan': '#dealer-black-jack-result', 'div': '#dealer-box', 'result': 0}
+    'you': {'scoreSpan': '#your-black-jack-result', 'div': '#your-box', 'score': 0},
+    'dealer': {'scoreSpan': '#dealer-black-jack-result', 'div': '#dealer-box', 'score': 0}
 }
 
-document.querySelector("blackjack-hit-button").addEventListener("click", blackjackHit)
+const YOU = blackjackGame['you']
+const DEALER = blackjackGame['dealer']
+
+document.querySelector("#blackjack-hit-button").addEventListener("click", blackjackHit)
 
 function blackjackHit() {
-    alert('hi')
+    let cardImage = document.createElement('img')
+    cardImage.src = 'static/images/Q.png'
+    document.querySelector(YOU['div']).appendChild(cardImage)
 }
 
