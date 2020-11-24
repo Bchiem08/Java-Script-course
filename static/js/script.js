@@ -160,12 +160,17 @@ document.querySelector("#blackjack-deal-button").addEventListener("click", black
 
 function blackjackHit() {
     let card = randomCard();
-    showCard(YOU);
+    showCard(card, YOU);
 }
 
-function showCard(activePlayer) {
+function randomCard() {
+    let randomIndex = Math.floor(Math.random() * 13);
+    return blackjackGame['cards'][randomIndex]
+}
+
+function showCard(card, activePlayer) {
     let cardImage = document.createElement('img')
-    cardImage.src = 'static/images/Q.png'
+    cardImage.src = `static/images/${card}.png`
     document.querySelector(activePlayer['div']).appendChild(cardImage)
     hitSound.play();
 }
@@ -183,7 +188,3 @@ function blackjackDeal() {
     }
 }
 
-function randomCard() {
-    let randomIndex = Math.floor(Math.random() * 13);
-    return blackjackGame['cards'][randomIndex]
-}
