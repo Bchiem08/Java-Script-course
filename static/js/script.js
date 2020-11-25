@@ -162,6 +162,7 @@ document.querySelector("#blackjack-deal-button").addEventListener("click", black
 function blackjackHit() {
     let card = randomCard();
     showCard(card, YOU);
+    updateScore(card, YOU)
 }
 
 function randomCard() {
@@ -187,5 +188,9 @@ function blackjackDeal() {
     for (i=0; i < dealerImages.length; i++) {
         dealerImages[i].remove()
     }
+}
+
+function updateScore(card, activePlayer) {
+    activePlayer['score'] += blackjackGame['cardsMap'] [card];
 }
 
