@@ -193,9 +193,17 @@ function blackjackDeal() {
 }
 
 function updateScore(card, activePlayer) {
-    activePlayer['score'] += blackjackGame['cardsMap'][card];
-}
+    if (card === 'A') {
 
+    if (activePlayer['score'] + blackjackGame['cardsMap'][card][1] <= 21) {
+        activePlayer['score'] += blackjackGame['cardsMap'][card][1];
+    } else {
+        activePlayer['score'] += blackjackGame['cardsMap'][card][0]
+    }
+    }else {
+        activePlayer['score'] += blackjackGame['cardsMap'][card];
+    }
+}
 function showScore(activePlayer) {
     document.querySelector(activePlayer['scoreSpan']).textContent = activePlayer['score']
 }
