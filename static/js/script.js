@@ -163,7 +163,7 @@ function blackjackHit() {
     let card = randomCard();
     showCard(card, YOU);
     updateScore(card, YOU);
-    // showScore(YOU);
+    showScore(YOU);
     console.log(YOU['score']);
 }
 
@@ -206,6 +206,12 @@ function updateScore(card, activePlayer) {
         activePlayer['score'] += blackjackGame['cardsMap'][card];
     }
 }
-// function showScore(activePlayer) {
-//     document.querySelector(activePlayer['scoreSpan']).textContent = activePlayer['score']
-// }
+
+function showScore(activePlayer) {
+    if (activePlayer['score'] > 21) {
+        document.querySelector(activePlayer['scoreSpan']).textContent = 'BUST!'
+        document.querySelector(activePlayer['scoreSpan']).style.color  = 'red'
+    } else {
+    document.querySelector(activePlayer['scoreSpan']).textContent = activePlayer['score']
+    }
+}
