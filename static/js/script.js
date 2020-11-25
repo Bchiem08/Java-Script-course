@@ -163,7 +163,7 @@ function blackjackHit() {
     let card = randomCard();
     showCard(card, YOU);
     updateScore(card, YOU);
-    showScore(YOU);
+    // showScore(YOU);
     console.log(YOU['score']);
 }
 
@@ -173,10 +173,12 @@ function randomCard() {
 }
 
 function showCard(card, activePlayer) {
+    if (activePlayer['score'] <= 21) {
     let cardImage = document.createElement('img')
     cardImage.src = `static/images/${card}.png`
     document.querySelector(activePlayer['div']).appendChild(cardImage)
     hitSound.play();
+    }
 }
 
 function blackjackDeal() {
@@ -204,6 +206,6 @@ function updateScore(card, activePlayer) {
         activePlayer['score'] += blackjackGame['cardsMap'][card];
     }
 }
-function showScore(activePlayer) {
-    document.querySelector(activePlayer['scoreSpan']).textContent = activePlayer['score']
-}
+// function showScore(activePlayer) {
+//     document.querySelector(activePlayer['scoreSpan']).textContent = activePlayer['score']
+// }
