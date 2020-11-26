@@ -161,7 +161,10 @@ document.querySelector("#blackjack-deal-button").addEventListener("click", black
 
 function blackjackHit() {
     let card = randomCard();
+    console.log(card);
     showCard(card, YOU);
+    updateScore(card, YOU);
+    console.log(YOU['score'])
 }
 
 function randomCard() {
@@ -191,3 +194,6 @@ function blackjackDeal() {
     }
 }
 
+function updateScore(card, activePlayer) {
+    activePlayer['score'] += blackjackGame['cardsMap'][card];
+}
